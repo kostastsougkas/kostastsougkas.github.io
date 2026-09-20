@@ -14,6 +14,15 @@
     "file": "assets/rolldown-runtime-hePW80VL.js",
     "name": "rolldown-runtime"
   },
+  "app/SiteNavigation.tsx": {
+    "file": "assets/SiteNavigation-BDhilRR_.js",
+    "name": "SiteNavigation",
+    "src": "app/SiteNavigation.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_framework-Unkh5IGE.js"
+    ]
+  },
   "app/gasket/GasketExplorer.tsx": {
     "file": "assets/GasketExplorer-g8KUIIev.js",
     "name": "GasketExplorer",
@@ -37,7 +46,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-Bf7mBpl7.js",
+    "file": "assets/layout-segment-context-CHGqziZc.js",
     "name": "layout-segment-context",
     "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -48,7 +57,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js": {
-    "file": "assets/link-YcSDy2Uw.js",
+    "file": "assets/link-Ctd3UYlB.js",
     "name": "link",
     "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js",
     "isDynamicEntry": true,
@@ -62,7 +71,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/router.js": {
-    "file": "assets/router-DaEBDo0-.js",
+    "file": "assets/router-CrNkptTx.js",
     "name": "router",
     "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/router.js",
     "isDynamicEntry": true,
@@ -77,7 +86,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-Cak-UV5U.js",
+    "file": "assets/index-CrRSmL6Q.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -88,6 +97,7 @@
     "dynamicImports": [
       "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js",
       "app/gasket/GasketExplorer.tsx",
+      "app/SiteNavigation.tsx",
       "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js",
       "virtual:vinext-app-browser-entry",
       "app/gasket/GasketMarkCanvas.tsx"
