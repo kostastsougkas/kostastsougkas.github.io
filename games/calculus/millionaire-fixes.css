@@ -1,0 +1,7 @@
+[hidden]{display:none!important}
+.math-token{display:inline-block;margin:0 .08em;font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-size:1.16em;vertical-align:-.16em;color:inherit}.limit-token{margin-right:.12em}.math-script{font-family:"Cambria Math","STIX Two Math","Times New Roman",serif;font-size:.72em;line-height:0}.question-card .math-token{font-size:1.1em}.answer .math-token,dialog .math-token{font-size:1.08em}
+.pq-expression{vertical-align:-.28em;margin:.02em .14em}
+.bottom-lifelines{margin-top:2px;margin-bottom:0}
+.ladder-panel li{font-size:15px}.ladder-title{font-size:11px}.high-score{font-size:12px}
+.level-pill{cursor:pointer}.level-dialog>p:not(.kicker){margin:0 0 20px;color:#cbd2ee}.level-options{display:grid;gap:10px;margin:20px 0}.level-option{border:1px solid #7189e7;border-radius:9px;background:#111e54;color:white;padding:15px 18px;text-align:left}.level-option:hover,.level-option.active{background:#273c8b;border-color:#f1cc68}.level-option strong,.level-option span{display:block}.level-option span{margin-top:4px;color:#bdc6e7;font-size:13px}.bank-link{display:block;margin:20px 0;color:#f1cc68;font-weight:bold}.cancel-level{border:0;background:transparent;color:#bdc6e7;padding:8px 14px}
+.replay-note{margin:0 auto 24px!important;padding:14px 17px;border:1px solid #7189e7;border-radius:9px;background:#111e54;color:#dce2ff!important}.replay-note strong,.replay-note span{display:block}.replay-note strong{color:#f1cc68;margin-bottom:4px}.replay-note span{font-size:14px;line-height:1.5}

@@ -1,0 +1,96 @@
+{
+  "_framework-Unkh5IGE.js": {
+    "file": "assets/framework-Unkh5IGE.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js"
+    ]
+  },
+  "_gasketGeometry-SLwNkSTV.js": {
+    "file": "assets/gasketGeometry-SLwNkSTV.js",
+    "name": "gasketGeometry"
+  },
+  "_rolldown-runtime-hePW80VL.js": {
+    "file": "assets/rolldown-runtime-hePW80VL.js",
+    "name": "rolldown-runtime"
+  },
+  "app/gasket/GasketExplorer.tsx": {
+    "file": "assets/GasketExplorer-g8KUIIev.js",
+    "name": "GasketExplorer",
+    "src": "app/gasket/GasketExplorer.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-Unkh5IGE.js",
+      "_gasketGeometry-SLwNkSTV.js"
+    ]
+  },
+  "app/gasket/GasketMarkCanvas.tsx": {
+    "file": "assets/GasketMarkCanvas-j-s6oMC6.js",
+    "name": "GasketMarkCanvas",
+    "src": "app/gasket/GasketMarkCanvas.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-Unkh5IGE.js",
+      "_gasketGeometry-SLwNkSTV.js"
+    ]
+  },
+  "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "assets/layout-segment-context-Bf7mBpl7.js",
+    "name": "layout-segment-context",
+    "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-Unkh5IGE.js",
+      "virtual:vinext-app-browser-entry"
+    ]
+  },
+  "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js": {
+    "file": "assets/link-YcSDy2Uw.js",
+    "name": "link",
+    "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-Unkh5IGE.js",
+      "virtual:vinext-app-browser-entry"
+    ],
+    "dynamicImports": [
+      "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/router.js"
+    ]
+  },
+  "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/router.js": {
+    "file": "assets/router-DaEBDo0-.js",
+    "name": "router",
+    "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/router.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-Unkh5IGE.js",
+      "virtual:vinext-app-browser-entry",
+      "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js"
+    ],
+    "dynamicImports": [
+      "_framework-Unkh5IGE.js"
+    ]
+  },
+  "virtual:vinext-app-browser-entry": {
+    "file": "assets/index-Cak-UV5U.js",
+    "name": "index",
+    "src": "virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-Unkh5IGE.js"
+    ],
+    "dynamicImports": [
+      "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js",
+      "app/gasket/GasketExplorer.tsx",
+      "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js",
+      "virtual:vinext-app-browser-entry",
+      "app/gasket/GasketMarkCanvas.tsx"
+    ]
+  }
+}

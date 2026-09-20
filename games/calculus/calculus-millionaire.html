@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>The Calculus Millionaire</title>
+  <meta name="description" content="A high-school and university calculus theory quiz with an escalating prize ladder.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kostastsougkas.github.io/games/calculus/calculus-millionaire.html">
+  <link rel="icon" href="calculus-games-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="millionaire.css">
+  <link rel="stylesheet" href="millionaire-fixes.css">
+</head>
+<body>
+  <div class="stage-lights" aria-hidden="true"></div>
+  <main class="millionaire-shell">
+    <header class="show-header">
+      <div class="show-brand"><span class="integral-mark">∫</span><div><span>THE</span><strong>CALCULUS MILLIONAIRE</strong></div></div>
+      <div class="header-actions"><button class="level-pill" id="level-settings" type="button" aria-haspopup="dialog"><span id="level-name">High school</span> ⚙</button><button class="sound-button" id="sound" type="button" aria-pressed="true" aria-label="Turn sound off">Sound on</button></div>
+    </header>
+    <section class="intro-card" id="intro" aria-labelledby="intro-title">
+      <div class="intro-emblem" aria-hidden="true"><span>∫</span></div>
+      <p class="kicker">A calculus theory challenge</p>
+      <h1 id="intro-title">Do you know the ideas<br>behind the calculations?</h1>
+      <p>Twelve questions become progressively harder. Reach a checkpoint to secure your winnings—and use each lifeline only once.</p>
+      <button class="gold-button" id="start" type="button">Take the hot seat <span>→</span></button>
+      <small>No time limit. No lengthy calculations.</small>
+    </section>
+    <section class="game-layout" id="game" hidden>
+      <div class="play-area">
+        <div class="game-status"><span id="question-number">QUESTION 1 OF 12</span><strong id="current-prize">FOR €100</strong></div>
+        <div class="question-card"><h1 id="question"></h1></div>
+        <div class="answers" id="answers" aria-label="Answer choices"></div>
+        <div class="final-row"><p id="prompt" role="status" aria-live="polite"></p><button id="final-answer" type="button" disabled>Final answer</button></div>
+        <div class="lifelines bottom-lifelines" aria-label="Lifelines">
+          <button id="fifty" type="button"><span>50:50</span><small>Remove two</small></button>
+          <button id="audience" type="button"><span>Ask the class</span><small>See their vote</small></button>
+          <button id="swap" type="button"><span>Swap</span><small>New question</small></button>
+        </div>
+        <div class="audience-panel" id="audience-panel" hidden aria-live="polite"><strong>THE CLASS VOTED</strong><div id="audience-bars"></div></div>
+      </div>
+      <aside class="ladder-panel" aria-label="Prize ladder">
+        <div class="ladder-title">PRIZE LADDER</div><ol id="ladder" reversed></ol>
+        <div class="high-score">Best result <strong id="best-score">€0</strong></div>
+      </aside>
+    </section>
+  </main>
+  <dialog id="result" aria-labelledby="result-title">
+    <div class="result-icon" id="result-icon">✓</div><p class="kicker" id="result-kicker">CORRECT</p><h2 id="result-title"></h2><p id="result-explanation"></p>
+    <p class="replay-note" id="replay-note" hidden><strong>Ready for another run?</strong><span>The questions and answer positions are randomized each time, so new questions can appear when you play again.</span></p>
+    <button class="gold-button" id="continue" type="button">Next question →</button>
+  </dialog>
+  <dialog id="level-dialog" class="level-dialog" aria-labelledby="level-title">
+    <p class="kicker">GAME SETTINGS</p><h2 id="level-title">Choose a level</h2><p>Changing level starts a fresh game.</p>
+    <div class="level-options">
+      <button id="level-high-school" class="level-option active" type="button"><strong>High school</strong><span>Swedish upper-secondary Matematik 3c</span></button>
+      <button id="level-university" class="level-option" type="button"><strong>University</strong><span>Applied single-variable calculus for engineering students</span></button>
+    </div>
+    <button id="cancel-level" class="cancel-level" type="button">Cancel</button>
+  </dialog>
+  <script src="math-typeset.js"></script><script src="millionaire-questions.js"></script><script src="millionaire.js"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Function Speed-Dating · Calculus Games</title>
+  <meta name="description" content="Match five function graphs with their derivatives.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://kostastsougkas.github.io/games/calculus/speed-dating.html">
+  <link rel="icon" href="calculus-games-icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="speed-date-page">
+  <main id="game">
+    <div class="game-title">
+      <div><h1>Function speed-dating<span class="pink">♡</span></h1><p>Select a function card first, then select its derivative. Match all five couples.</p></div>
+      <img class="title-art" src="speed-dating.png" alt="Two graph characters enjoying a speed date">
+    </div>
+    <span id="status" class="sr-only" role="status" aria-live="polite"></span>
+    <section class="graph-section">
+      <div class="section-heading">
+        <h2><span class="section-dot">f(x)</span> The functions</h2>
+        <div class="round-rules"><span class="round-badge" id="round">ROUND 1 OF 3 · PRACTICE</span><strong id="mistake-budget"></strong></div>
+      </div>
+      <div class="graph-grid" id="functions"></div>
+    </section>
+    <section class="graph-section">
+      <h2><span class="section-dot derivative">f′(x)</span> The derivatives</h2>
+      <div class="graph-grid" id="derivatives"></div>
+    </section>
+    <div class="game-bottom"><span>All graphs use the same scale: −4 to 4 on both axes.</span><button class="secondary" id="new-round">Reshuffle this round ↻</button></div>
+    <dialog id="completion" aria-labelledby="completion-title" aria-describedby="completion-copy">
+      <span class="victory-heart" aria-hidden="true">♡</span><div><h2 id="completion-title">Perfect chemistry!</h2><p id="completion-copy">Ready for the next round?</p></div>
+      <div class="dialog-actions"><button class="primary" id="again" autofocus>Next round ↗</button></div>
+    </dialog>
+  </main>
+  <dialog id="loss-dialog" aria-labelledby="loss-title" aria-describedby="loss-copy">
+    <img src="matchmaking-mishap.png" alt="Cupid looks baffled as two mismatched graph characters sulk across a dating table"><h2 id="loss-title">Cupid needs a coffee break.</h2><p id="loss-copy"></p><p id="retry-copy"></p>
+    <div class="dialog-actions"><button class="primary" id="retry" autofocus>Try again ↻</button></div>
+  </dialog>
+  <script src="game.js"></script>
+</body>
+</html>

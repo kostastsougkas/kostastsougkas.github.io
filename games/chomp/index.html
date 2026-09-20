@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Play Chomp · A Mathematical Strategy Game</title><meta name="description" content="Play Chomp, a free mathematical strategy game against Truffle, a clever chocolate-loving monster. Explore winning moves and the strategy-stealing argument."><meta name="robots" content="index, follow"><link rel="canonical" href="https://kostastsougkas.github.io/games/chomp/"><meta property="og:type" content="website"><meta property="og:title" content="Play Chomp · A Mathematical Strategy Game"><meta property="og:description" content="Avoid the poisoned bite and explore the mathematics of Chomp in a free browser game by Konstantinos Tsougkas."><meta property="og:url" content="https://kostastsougkas.github.io/games/chomp/"><link rel="stylesheet" href="style.css"></head>
+<body>
+<main>
+ <div class="intro"><div><h1>One bitter <em>bite.</em></h1><p>Avoid eating the last poisoned bite!</p></div><div class="intro-tools"><button id="learn" class="outline">How to play ↗</button><button id="classroom" class="outline">✧ &nbsp; The mathematics</button></div></div>
+ <div class="game-layout">
+  <section class="table-panel" aria-label="Chocolate game">
+   <div class="table-heading"><div class="turn"><span id="turn-dot"></span><strong id="turn-label">Your turn</strong></div><span class="counter"><b id="remaining">35</b> pieces left</span></div>
+   <p id="status" role="status" aria-live="polite">Choose a square. Everything above and to its right goes too.</p>
+   <div class="board-scene"><div class="board-frame"><div id="board" role="group" aria-label="Chocolate bar. Poison is at the bottom left."></div></div></div>
+   <div class="board-caption"><span><i class="poison-dot"></i> Bottom-left is poisoned</span><span id="preview-label">Hover or focus to preview a bite</span></div>
+   <div class="actions"><button id="hint" class="outline">✧ &nbsp; A little hint</button><button id="new-game" class="primary">New chocolate <span>↻</span></button></div>
+   <p id="hint-text" class="hint-text" aria-live="polite"></p>
+  </section>
+  <aside class="opponent-panel"><div class="opponent-top"><span class="eyebrow">YOUR OPPONENT</span></div><div class="portrait"><img id="monster-art" src="monster.png" alt="Truffle, a fluffy teal monster with golden eyes and little horns"><div class="portrait-shade"></div><div class="monster-name"><h2>Truffle</h2></div></div><div class="opponent-body"><label for="difficulty">Monster’s mood</label><select id="difficulty"><option value="friendly">Friendly · learning together</option><option value="tactical" selected>Cunning · a little room to win</option><option value="perfect">Unforgiving · perfect play</option></select><p id="difficulty-note" class="small">Finds winning moves, but occasionally slips up.</p><div class="settings"><div><label for="size">Chocolate bar</label><select id="size"><option value="5,7">5 × 7 · Classic</option><option value="3,4">3 × 4 · First bites</option><option value="4,4">4 × 4 · The square</option><option value="6,8">6 × 8 · Feast</option><option value="8,12">8 × 12 · Brutal</option></select></div><div><label for="first">First bite</label><select id="first"><option value="human">You</option><option value="monster">Truffle</option></select></div></div><p class="small settings-note">Board and first-player changes start a fresh game.</p><div class="panel-tools"><button id="sound" class="quiet" aria-pressed="true">♫ &nbsp; Sound on</button></div></div></aside>
+ </div>
+</main>
+<dialog id="info"><button id="close-info" class="close" aria-label="Close">×</button><div id="info-content"></div></dialog>
+<dialog id="result" aria-labelledby="result-title" aria-describedby="result-message"><button id="close-result" class="close" aria-label="Close result">×</button><div id="result-symbol" class="result-symbol" aria-hidden="true">✧</div><h2 id="result-title"></h2><p id="result-message"></p><div class="result-actions"><button id="play-again" class="primary" autofocus>Play again ↻</button></div></dialog>
+<script src="engine.js"></script><script src="app.js"></script>
+</body></html>
+
