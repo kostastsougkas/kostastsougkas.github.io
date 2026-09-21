@@ -1,0 +1,209 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Goblin’s Treasure · Nim</title>
+<link rel="stylesheet" href="style.css?v=20260920l">
+</head>
+<body>
+<header>
+<a class="brand" href="./">
+<span class="sigil">◆</span> THE GOBLIN’S TREASURE <small>A GAME OF NIM</small>
+</a>
+<div>
+<button id="settings-open">Difficulty Settings</button>
+<button id="sound" aria-pressed="true">Sound on</button>
+<button id="info">How to play & learn ↗</button>
+</div>
+</header>
+<main>
+<div class="game-layout">
+<section class="arena" aria-label="Treasure cavern">
+<div class="arena-top">
+<span class="location">✦ THE EMERALD HOLLOW</span>
+<span id="turn" class="turn">Your turn</span>
+</div>
+<div id="scene">
+</div>
+<div class="side-panel left-panel">
+<div class="speech">
+<span>GRIBBLE, KEEPER OF GEMS</span>
+<p id="speech" aria-live="polite">“We take turns. Click one or more gems from one pile, then End turn. Take the last gem to win.”</p>
+</div>
+<div class="turn-info">
+<span class="eyebrow">YOUR MOVE</span>
+<p id="selection" aria-live="polite">Click the gems you want to take.</p>
+<span class="move-help">One pile per turn · Click again to deselect</span>
+</div>
+<div class="gem-count">◇ <b id="total">12</b> gems remain</div>
+</div>
+<div class="side-panel right-panel">
+<div class="lantern-station">
+<button id="hint" class="lantern-button" aria-label="Ask the lantern for a hint">
+<svg class="lantern" viewBox="0 0 80 110" aria-hidden="true">
+<path d="M29 23V15a11 11 0 0 1 22 0v8" fill="none" stroke="#d6b16a" stroke-width="4"/>
+<path d="M22 28h36l7 13-5 48H20l-5-48z" fill="#283b30" stroke="#c19a55" stroke-width="3"/>
+<path d="M24 43h32l-3 37H27z" fill="#f6c760" opacity=".2"/>
+<path class="flame" d="M40 76c-20-5-8-20-2-31-2 14 19 22 2 31" fill="#ffe6a0"/>
+<path d="M18 35h44M18 87h44M24 96h32" stroke="#e0b76a" stroke-width="4"/>
+</svg>
+<span>Ask the lantern for a hint</span>
+</button>
+<p id="hint-text" aria-live="polite">
+</p>
+</div>
+<div class="turn-actions">
+<button id="clear" disabled>Clear selection</button>
+<button class="primary" id="take" disabled>End turn →</button>
+</div>
+<button id="restart">↻ Restart</button>
+</div>
+</section>
+</div>
+</main>
+<dialog id="result" aria-labelledby="result-title">
+<div class="result-gem" aria-hidden="true">◆</div>
+<h2 id="result-title">
+</h2>
+<p id="result-message">
+</p>
+<button id="try-again" class="primary">Try again →</button>
+</dialog>
+<dialog id="settings" class="controls">
+<button id="settings-close" class="close" aria-label="Close settings">×</button>
+<h2>Game settings</h2>
+<div class="eyebrow">YOUR GAME</div>
+<label for="puzzle">Choose your challenge</label>
+<select id="puzzle">
+<option value="first">First steps · 1, 2, 4</option>
+<option value="classic" selected>The classic · 3, 4, 5</option>
+<option value="deep">Deep cavern · 7, 11, 13, 16</option>
+<option value="custom">Your own piles…</option>
+</select>
+<form id="custom-form" hidden>
+<label for="custom">2–5 piles, each 1–31 gems</label>
+<input id="custom" value="3, 4, 5" aria-describedby="custom-error">
+<button>Start custom game</button>
+<p id="custom-error" role="alert">
+</p>
+</form>
+<p class="challenge-note" id="challenge-note">Three piles. One ancient puzzle. You move first.</p>
+<p class="muted">Choosing a challenge starts a fresh game. Close settings to return to the cavern.</p>
+</dialog>
+<dialog id="guide">
+<button id="close-guide" class="close" aria-label="Close guide">×</button>
+<h3>How to play</h3>
+<p>You and Gribble alternate turns. Remove one or more gems from exactly one nonempty pile. You may empty that pile. Whoever takes the final gem wins. Click individual gems in the cavern to select them, then press <b>End turn</b>. Selected gems glow gold. Click a selected gem again to deselect it, or use Clear selection to choose a different pile. You can also Tab to a gem and press Enter or Space. Gribble plays optimally. Use Restart to try another approach.</p>
+<details>
+<summary>Reveal the mathematical background</summary>
+<p>Nim is a finite, impartial game: both players have the same legal moves, there is no hidden information, and every move reduces the total. Charles L. Bouton published its mathematical solution in 1901–1902.</p>
+<h3>1. Write each pile size in binary</h3>
+<p>We normally write numbers in decimal, where the place values are 1, 10, 100, and so on. Binary uses only the digits <b>0 and 1</b>, with place values that double: <b>1, 2, 4, 8, 16…</b>, reading from right to left. A 1 means “include this value”; a 0 means “leave it out”.</p>
+<p>For our piles of 3, 4, and 5 gems, we need just three columns, worth <b>4, 2, and 1</b>:</p>
+<div class="math-table">
+<table>
+<caption>Converting the pile sizes to binary</caption>
+<thead>
+<tr>
+<th scope="col">Gems</th>
+<th scope="col">4s</th>
+<th scope="col">2s</th>
+<th scope="col">1s</th>
+<th scope="col">Meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">3</th>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0 + 2 + 1 = 3</td>
+</tr>
+<tr>
+<th scope="row">4</th>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>4 + 0 + 0 = 4</td>
+</tr>
+<tr>
+<th scope="row">5</th>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>4 + 0 + 1 = 5</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>So 3 is <b>011</b>, 4 is <b>100</b>, and 5 is <b>101</b> in binary. The zero at the front of 011 does not change its value; it just keeps the columns lined up.</p>
+<h3>2. Combine the columns using XOR</h3>
+<p>The symbol <b>⊕</b> means <b>exclusive OR</b>, usually called <b>XOR</b>. For two binary digits, the result is 1 when they are different and 0 when they are the same: <b>0 ⊕ 0 = 0</b>, <b>0 ⊕ 1 = 1</b>, <b>1 ⊕ 0 = 1</b>, and <b>1 ⊕ 1 = 0</b>.</p>
+<p>For several numbers, there is an easy shortcut: count the 1s in each column. An <b>odd</b> count gives 1; an <b>even</b> count gives 0. Zero is even too. Each pair of 1s cancels out.</p>
+<p>This is <b>not ordinary addition</b>: you never carry anything into the next column. Work on each column separately.</p>
+<div class="math-table">
+<table>
+<caption>Working out 3 ⊕ 4 ⊕ 5</caption>
+<thead>
+<tr>
+<th scope="col">Number</th>
+<th scope="col">4s</th>
+<th scope="col">2s</th>
+<th scope="col">1s</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row">3</th>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+</tr>
+<tr>
+<th scope="row">4</th>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<th scope="row">5</th>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+</tr>
+<tr>
+<th scope="row">Count of 1s</th>
+<td>2 (even)</td>
+<td>1 (odd)</td>
+<td>2 (even)</td>
+</tr>
+<tr>
+<th scope="row">XOR result</th>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>The result is <b>010</b> in binary. Read it using the same place values: <b>0 × 4 + 1 × 2 + 0 × 1 = 2</b>. That is why <b>3 ⊕ 4 ⊕ 5 = 2</b>. The XOR of all the pile sizes is called the <b>nim-sum</b>.</p>
+<h3>3. Use the result to choose a move</h3>
+<p>The goal is to leave your opponent a <b>nim-sum of zero</b>. Zero does not mean that there are no gems left: it means every binary column has an even number of 1s.</p>
+<p>With piles of 3, 4, and 5, take <b>2 gems from the first pile</b>, leaving <b>1, 4, and 5</b>. Their binary forms are <b>001, 100, and 101</b>. The 4s column now has two 1s, the 2s column has none, and the 1s column has two. Every count is even, so <b>1 ⊕ 4 ⊕ 5 = 0</b>.</p>
+<p>The nim-sum is <b>not generally the number of gems to take</b>; both happen to be 2 in this example. To find a move systematically, XOR each pile size with the nim-sum. If the result is smaller than that pile, reduce the pile to that result. Here, <b>3 ⊕ 2 = 011 ⊕ 010 = 001 = 1</b>, so reduce the first pile from 3 to 1.</p>
+<p>A nonzero nim-sum means the player whose turn it is can force a win by leaving zero after every move. A nonempty position with nim-sum zero is losing for the player about to move <b>if the opponent plays perfectly</b>. It is not an immediate loss; an opponent's mistake can still give you a chance.</p>
+<h3>Why it works</h3>
+<p>If the sum is S and a pile changes from a to b, the new sum is S ⊕ a ⊕ b. When S = 0, every legal change makes this nonzero, since a ≠ b. When S ≠ 0, choose a pile a with a 1 in S’s highest set bit and set b = a ⊕ S. Then b &lt; a, so the move is legal, and the new sum is 0. Repeating this eventually leaves all piles empty after your move.</p>
+<p>At university level, interpret XOR as vector addition over the field with two elements, and investigate the Sprague–Grundy theorem, which connects other finite impartial games to Nim.</p>
+</details>
+<p>
+<a href="https://www.teach.cs.toronto.edu/~ajr/270/probsess/03/strategy.html" target="_blank" rel="noopener">Learn more: University of Toronto’s Nim strategy ↗</a>
+</p>
+<p class="muted">The game works offline. The further-reading link needs an internet connection.</p>
+</dialog>
+<script src="game.bundle.js?v=20260920m">
+</script>
+</body>
+</html>
