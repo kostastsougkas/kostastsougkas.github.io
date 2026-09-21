@@ -14,7 +14,7 @@
   <main class="millionaire-shell">
     <header class="show-header">
       <div class="show-brand"><span class="integral-mark">∫</span><div><span>THE</span><strong>CALCULUS MILLIONAIRE</strong></div></div>
-      <div class="header-actions"><button class="level-pill" id="level-settings" type="button" aria-haspopup="dialog"><span id="level-name">High school</span> ⚙</button><button class="sound-button" id="sound" type="button" aria-pressed="true" aria-label="Turn sound off">Sound on</button></div>
+      <div class="header-actions"><button class="level-pill" id="level-settings" type="button" aria-haspopup="dialog"><span id="level-name">High school</span> ⚙</button><button class="sound-button" id="sound" type="button" aria-pressed="true" aria-label="Turn sound off">Sound on</button><label class="language-control"><svg aria-hidden="true" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="9"/><ellipse cx="12" cy="12" rx="4" ry="9"/><path d="M3 12h18M5 6h14M5 18h14"/></svg><select id="language" aria-label="Language / Språk"><option value="en">English</option><option value="sv">Svenska</option></select></label></div>
     </header>
     <section class="intro-card" id="intro" aria-labelledby="intro-title">
       <div class="intro-emblem" aria-hidden="true"><span>∫</span></div>
@@ -39,7 +39,7 @@
       </div>
       <aside class="ladder-panel" aria-label="Prize ladder">
         <div class="ladder-title">PRIZE LADDER</div><ol id="ladder" reversed></ol>
-        <div class="high-score">Best result <strong id="best-score">€0</strong></div>
+        <div class="high-score"><span id="best-label">Best result</span> <strong id="best-score">€0</strong></div>
       </aside>
     </section>
   </main>
@@ -56,6 +56,6 @@
     </div>
     <button id="cancel-level" class="cancel-level" type="button">Cancel</button>
   </dialog>
-  <script src="math-typeset.js"></script><script src="millionaire-questions.js"></script><script src="millionaire.js"></script>
+  <script src="math-typeset.js"></script><script src="millionaire-questions.js"></script><script src="millionaire-sv.js"></script><script src="millionaire-i18n.js"></script><script src="millionaire.js"></script>
 </body>
 </html>
