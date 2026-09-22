@@ -26038,7 +26038,7 @@ void main() {
             const gem = mesh(gemGeo, gemMats[i], gx, 0.35, gz, group);
             gem.scale.set(0.85, 1.4, 0.85);
             gem.rotation.y = j * 1.5;
-            gem.userData = { pile: i, index: j, baseY: 0.35 };
+            gem.userData = { pile: i, index: j, baseY: 0.35, baseRotation: gem.rotation.y };
             gems.push(gem);
             const button = document.createElement("button");
             button.className = "gem-target";
@@ -26094,7 +26094,7 @@ void main() {
         goblin.position.y = Math.sin(t * 1.7) * 0.045;
         goblin.rotation.y = Math.sin(t * 0.6) * 0.08;
         gems.forEach((g, i) => {
-          g.rotation.y += 4e-3;
+          g.rotation.y = g.userData.baseRotation + t * 0.24;
           g.position.y = g.userData.baseY + Math.sin(t * 2 + i) * 0.025;
         });
       }
