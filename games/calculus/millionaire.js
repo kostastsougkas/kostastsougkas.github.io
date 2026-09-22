@@ -3,7 +3,7 @@
   const Q=globalThis.CalculusMillionaireQuestions,SV=globalThis.CalculusMillionaireSwedish,I18n=globalThis.CalculusMillionaireI18n,typeset=globalThis.CalculusMathTypeset,letters=['A','B','C','D'];
   const $=id=>document.getElementById(id),intro=$('intro'),game=$('game'),answers=$('answers'),ladder=$('ladder'),result=$('result');
   let bank=Q.highSchool,lang='en',level=0,question=null,sourceQuestion=null,answerOrder=[],selected=null,locked=false,soundOn=true,used={fifty:false,audience:false,swap:false},chosen=[],usedTopics=new Set(),removed=[],lastResult=null,resultTimer=null;
-  try{if(localStorage.getItem('calculus-millionaire-language')==='sv')lang='sv'}catch(e){}
+  try{if((localStorage.getItem('calculus-language')||localStorage.getItem('calculus-millionaire-language'))==='sv')lang='sv'}catch(e){}
   const t=(key,values)=>I18n.t(lang,key,values);
   const euro=n=>new Intl.NumberFormat(lang==='sv'?'sv-SE':'en-IE',{style:'currency',currency:'EUR',maximumFractionDigits:0}).format(n);
   function shuffle(items){const a=items.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a}
@@ -66,7 +66,7 @@
   function loadBest(){let best=0;try{best=Number(localStorage.getItem(storageKey())||0)}catch(e){}$('best-score').textContent=euro(best)}
   function paintSound(){$('sound').textContent=t(soundOn?'soundOn':'soundOff');$('sound').setAttribute('aria-pressed',String(soundOn));$('sound').setAttribute('aria-label',t(soundOn?'turnSoundOff':'turnSoundOn'))}
   function setLanguage(value){
-    if(!['en','sv'].includes(value))return;lang=value;try{localStorage.setItem('calculus-millionaire-language',lang)}catch(e){}
+    if(!['en','sv'].includes(value))return;lang=value;try{localStorage.setItem('calculus-millionaire-language',lang);localStorage.setItem('calculus-language',lang)}catch(e){}
     I18n.apply(lang);$('level-name').textContent=t(bank.key);paintSound();buildLadder();loadBest();paintQuestion();paintResult();
   }
   function chooseLevel(key){

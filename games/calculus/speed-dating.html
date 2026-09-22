@@ -11,7 +11,7 @@
 <body class="speed-date-page">
   <main id="game">
     <div class="game-title">
-      <div><h1>Function speed-dating<span class="pink">♡</span></h1><p>Select a function card first, then select its derivative. Match all five couples.</p></div>
+      <div><h1>Function speed-dating<span class="pink">♡</span></h1><p>Select a function card first, then select its derivative. Match all five couples.</p><div class="game-language"><label for="language">🌐 <span data-i18n="language">Language</span></label><select id="language" aria-label="Language / Språk"><option value="en">English</option><option value="sv">Svenska</option></select></div></div>
       <img class="title-art" src="speed-dating.png" alt="Two graph characters enjoying a speed date">
     </div>
     <span id="status" class="sr-only" role="status" aria-live="polite"></span>
@@ -36,6 +36,7 @@
     <img src="matchmaking-mishap.png" alt="Cupid looks baffled as two mismatched graph characters sulk across a dating table"><h2 id="loss-title">Cupid needs a coffee break.</h2><p id="loss-copy"></p><p id="retry-copy"></p>
     <div class="dialog-actions"><button class="primary" id="retry" autofocus>Try again ↻</button></div>
   </dialog>
+  <script src="speed-dating-i18n.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
