@@ -259,7 +259,8 @@ function scheduleMonster(){
   if(ticket!==epoch||over||turn!=='monster')return;
   try{
    const choices=await analyzeAsync(board);if(ticket!==epoch||over||turn!=='monster')return;
-   const win=choices.find(move=>move.winning),m=win||choices[0]||{x:0,y:0};
+   // Perfect play: any winning bite is equally good, so vary between them. With no winning bite, any safe bite will do.
+   const winners=choices.filter(move=>move.winning),win=winners.length>0,m=pick(win?winners:choices)||{x:0,y:0};
    const count=biteCount(m.x,m.y);
    $('turn-label').textContent='Truffle takes a bite…';$('status').textContent=`Truffle chose ${label(m.x,m.y)}. Watch the highlighted chocolate.`;
    $('preview-label').textContent=`Truffle’s bite · ${count} piece${count===1?'':'s'}`;

@@ -45,8 +45,18 @@
       "_gasketGeometry-SLwNkSTV.js"
     ]
   },
+  "app/travel/TravelLightbox.tsx": {
+    "file": "assets/TravelLightbox-CiLR-DTS.js",
+    "name": "TravelLightbox",
+    "src": "app/travel/TravelLightbox.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-Unkh5IGE.js"
+    ]
+  },
   "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js": {
-    "file": "assets/layout-segment-context-CHGqziZc.js",
+    "file": "assets/layout-segment-context-BwvTQxRn.js",
     "name": "layout-segment-context",
     "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js",
     "isDynamicEntry": true,
@@ -57,7 +67,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js": {
-    "file": "assets/link-Ctd3UYlB.js",
+    "file": "assets/link-BsvlHNhP.js",
     "name": "link",
     "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js",
     "isDynamicEntry": true,
@@ -71,7 +81,7 @@
     ]
   },
   "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/router.js": {
-    "file": "assets/router-CrNkptTx.js",
+    "file": "assets/router-BUu2Mamy.js",
     "name": "router",
     "src": "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/router.js",
     "isDynamicEntry": true,
@@ -86,7 +96,7 @@
     ]
   },
   "virtual:vinext-app-browser-entry": {
-    "file": "assets/index-CrRSmL6Q.js",
+    "file": "assets/index-DMiWJIIv.js",
     "name": "index",
     "src": "virtual:vinext-app-browser-entry",
     "isEntry": true,
@@ -96,6 +106,7 @@
     ],
     "dynamicImports": [
       "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/layout-segment-context.js",
+      "app/travel/TravelLightbox.tsx",
       "app/gasket/GasketExplorer.tsx",
       "app/SiteNavigation.tsx",
       "node_modules/.pnpm/vinext@0.0.50_@vitejs+plugi_b27f022a583396261b78d99962255621/node_modules/vinext/dist/shims/link.js",
