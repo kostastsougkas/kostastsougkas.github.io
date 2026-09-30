@@ -1,11 +1,11 @@
 import * as THREE from './vendor/three.module.js';
+import {env,glowSprite} from './desert-art.js';
 export function createCaravan(scene){
- // Unlit, matte colours stay consistent as the caravan turns in the sunlight.
- const tan=new THREE.MeshBasicMaterial({color:'#c18d58',toneMapped:false}),dark=new THREE.MeshBasicMaterial({color:'#493022',toneMapped:false}),teal=new THREE.MeshBasicMaterial({color:'#267b86',toneMapped:false}),red=teal,cream=teal;
+ const lam=color=>new THREE.MeshLambertMaterial({color}),tan=lam('#c48f5a'),dark=lam('#4a3225'),teal=lam('#1f8792'),red=lam('#b8432f'),cream=lam('#f3e3bd');
 
  function part(g,geometry,material,x,y,z,sx=1,sy=1,sz=1){const m=new THREE.Mesh(geometry,material);m.position.set(x,y,z);m.scale.set(sx,sy,sz);m.castShadow=true;g.add(m);return m;}
  const animals=[];
- for(let i=0;i<1;i++){const root=new THREE.Group(),body=new THREE.Group();root.add(body);scene.add(root);root.scale.setScalar(.85);const legs=[];const sphere=new THREE.SphereGeometry(1,12,8);
+ for(let i=0;i<2;i++){const root=new THREE.Group(),body=new THREE.Group();root.add(body);scene.add(root);root.scale.setScalar(.85);const legs=[];const sphere=new THREE.SphereGeometry(1,12,8);
  part(body,sphere,tan,0,.72,0,.23,.26,.43);part(body,sphere,tan,0,.98,-.06,.18,.24,.23);
  const neck=part(body,new THREE.CapsuleGeometry(.09,.43,4,8),tan,0,1,.38);neck.rotation.x=.35;
  part(body,sphere,tan,0,1.32,.52,.115,.13,.22);part(body,sphere,tan,0,1.29,.68,.095,.065,.14);
@@ -23,6 +23,7 @@ export function createCaravan(scene){
  part(torso,new THREE.BoxGeometry(.12,.18,.12),red,-.19,.5,-.02);
  for(const side of [-1,1]){const leg=new THREE.Group();leg.position.set(side*.075,.35,0);merchant.add(leg);part(leg,new THREE.CapsuleGeometry(.035,.22,3,6),dark,0,-.12,0);part(leg,new THREE.SphereGeometry(.055,8,6),dark,0,-.28,.04,1,.6,1.5);humanLegs.push(leg);}
  const arm=part(torso,new THREE.CapsuleGeometry(.034,.23,3,6),tan,.18,.57,-.1);arm.rotation.x=-.65;
+ const lantern=part(merchant,new THREE.SphereGeometry(.05,10,8),new THREE.MeshBasicMaterial({color:'#ffd27a',toneMapped:false}),-.2,.62,.1);lantern.castShadow=false;part(merchant,new THREE.CylinderGeometry(.012,.012,.5,5),dark,-.2,.5,.1);const lglow=glowSprite('#ffb84d',1.1,.3);lglow.position.set(-.2,.62,.1);merchant.add(lglow);
  const hand=new THREE.Vector3(.18,.46,-.19),nose=new THREE.Vector3(0,1.29,.79);
  const ropeGeo=new THREE.BufferGeometry();ropeGeo.setAttribute('position',new THREE.BufferAttribute(new Float32Array(17*3),3));const rope=new THREE.Line(ropeGeo,new THREE.LineBasicMaterial({color:'#67442b'}));rope.frustumCulled=false;scene.add(rope);
  const marks=[];const footprintGeo=new THREE.CircleGeometry(.045,8),dustGeo=new THREE.SphereGeometry(.1,6,4);
@@ -33,7 +34,7 @@ export function createCaravan(scene){
  return {reset(){for(const m of marks){m.age=99;m.mesh.material.opacity=0;}elapsed=0;},update(cities,route,d,t,dt,moving,reduced){
  animals.forEach((a,i)=>{const p=sample(cities,route,d-(i+1)*1.25);if(d<(i+1)*1.25){p.x-=Math.sin(p.angle)*((i+1)*1.25-d);p.z-=Math.cos(p.angle)*((i+1)*1.25-d);}a.root.position.set(p.x,.61,p.z);a.root.rotation.y=p.angle;const gait=moving&&!reduced?t*9:0;a.body.position.y=gait?Math.sin(gait*2)*.018:0;a.legs.forEach((leg,j)=>leg.rotation.x=gait?Math.sin(gait+(j===0||j===3?0:Math.PI)+i)*.32:0);});
  const leader=sample(cities,route,d);merchant.position.set(leader.x,.61,leader.z);merchant.rotation.y=leader.angle;const walk=moving&&!reduced?Math.sin(t*9):0;humanLegs.forEach((leg,i)=>leg.rotation.x=walk*(i?-.4:.4));torso.position.y=Math.abs(walk)*.015;
- merchant.updateMatrixWorld(true);animals[0].root.updateMatrixWorld(true);const start=merchant.localToWorld(hand.clone()),end=animals[0].root.localToWorld(nose.clone()),rp=ropeGeo.attributes.position;for(let i=0;i<=16;i++){const f=i/16;rp.setXYZ(i,start.x+(end.x-start.x)*f,start.y+(end.y-start.y)*f-Math.sin(f*Math.PI)*.12,start.z+(end.z-start.z)*f);}rp.needsUpdate=true;
+ lglow.material.opacity=.12+env.night*.55+Math.sin(t*7)*.03;merchant.updateMatrixWorld(true);animals[0].root.updateMatrixWorld(true);const start=merchant.localToWorld(hand.clone()),end=animals[0].root.localToWorld(nose.clone()),rp=ropeGeo.attributes.position;for(let i=0;i<=16;i++){const f=i/16;rp.setXYZ(i,start.x+(end.x-start.x)*f,start.y+(end.y-start.y)*f-Math.sin(f*Math.PI)*.12,start.z+(end.z-start.z)*f);}rp.needsUpdate=true;
  elapsed+=dt;if(moving&&!reduced&&elapsed>.12){elapsed=0;const a=animals[0].root;for(const side of [-1,1]){const m=marks[markIndex++%80];m.age=0;m.mesh.position.set(a.position.x+Math.cos(a.rotation.y)*side*.14,.568,a.position.z-Math.sin(a.rotation.y)*side*.14);m.mesh.rotation.z=-a.rotation.y;}const puff=marks[dustIndex++];if(dustIndex>=104)dustIndex=80;puff.age=0;puff.mesh.position.copy(a.position);puff.mesh.position.y=.7;}
  for(const m of marks){m.age+=dt;const duration=m.dust?1.4:7;m.mesh.material.opacity=Math.max(0,1-m.age/duration)*(m.dust?.15:.25);if(m.dust&&m.age<duration){m.mesh.position.y+=dt*.16;m.mesh.position.x+=dt*.1;m.mesh.scale.setScalar(1+m.age*2);}}
  }};

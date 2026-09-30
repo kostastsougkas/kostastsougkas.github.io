@@ -1,0 +1,14 @@
+html[lang="el"] .show-brand{min-width:0;letter-spacing:0}
+html[lang="el"] .show-brand strong{font-size:14px;letter-spacing:0;overflow-wrap:anywhere}
+html[lang="el"] .show-header{height:auto;min-height:66px;gap:12px;padding-block:6px}
+html[lang="el"] .header-actions{flex-shrink:0}
+html[lang="el"] .mission-header>div:first-child{min-width:0}
+html[lang="el"] .mission-header h1{overflow-wrap:anywhere}
+@media(max-width:760px){
+  html[lang="el"] .mission-header{flex-wrap:wrap}
+  html[lang="el"] .mission-header>div:first-child{flex-basis:100%}
+  html[lang="el"] .header-controls{width:100%;justify-content:space-between}
+  html[lang="el"] .show-brand strong{font-size:11px}
+  html[lang="el"] .show-header .header-actions{gap:5px}
+  html[lang="el"] .show-header .sound-button{padding:7px}
+}

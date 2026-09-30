@@ -3,40 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#071319">
 <title>The Goblin’s Treasure · Nim</title>
-<link rel="stylesheet" href="style.css?v=20260920l">
+<link rel="stylesheet" href="style.css?v=20260929a">
 </head>
 <body>
 <header>
 <a class="brand" href="./">
-<span class="sigil">◆</span> THE GOBLIN’S TREASURE <small>A GAME OF NIM</small>
+<svg class="sigil" viewBox="0 0 24 30" aria-hidden="true"><path d="M12 1l9 8-3 16-6 4-6-4-3-16z" fill="url(#g)" stroke="#ffe9b0" stroke-width="1"/><path d="M12 1l-3 10 3 18 3-18zM3 9h18" fill="none" stroke="#fff8" stroke-width=".8"/><defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffe08a"/><stop offset="1" stop-color="#e0902c"/></linearGradient></defs></svg>
+<span class="brand-text"><b>THE GOBLIN’S TREASURE</b><small>A GAME OF NIM</small></span>
 </a>
-<div>
+<div class="header-actions">
 <button id="settings-open">Difficulty Settings</button>
 <button id="sound" aria-pressed="true">Sound on</button>
-<button id="info">How to play & learn ↗</button>
+<button id="info">How to play &amp; learn ↗</button>
 </div>
 </header>
 <main>
 <div class="game-layout">
 <section class="arena" aria-label="Treasure cavern">
+<div id="scene"></div>
+<div class="vignette" aria-hidden="true"></div>
 <div class="arena-top">
 <span class="location">✦ THE EMERALD HOLLOW</span>
-<span id="turn" class="turn">Your turn</span>
-</div>
-<div id="scene">
+<span id="turn" class="turn" data-state="you">Your turn</span>
 </div>
 <div class="side-panel left-panel">
-<div class="speech">
+<div class="speech glass">
+<div class="speaker">
+<svg class="avatar" viewBox="0 0 48 48" aria-hidden="true">
+<circle cx="24" cy="24" r="23" fill="#0f2a2c" stroke="#e0b866" stroke-width="1.5"/>
+<path d="M8 22L1 12l13 4zM40 22l7-10-13 4z" fill="#79a944"/>
+<ellipse cx="24" cy="27" rx="13" ry="12" fill="#8fc04e"/>
+<path d="M11 18Q24 3 37 18Q24 12 11 18z" fill="#4b3470"/><path d="M26 6q9-6 14 2-6-1-9 2z" fill="#6d3f7f"/>
+<ellipse cx="18.5" cy="25" rx="3" ry="3.4" fill="#f6ea7a"/><ellipse cx="29.5" cy="25" rx="3" ry="3.4" fill="#f6ea7a"/>
+<ellipse cx="18.8" cy="25.4" rx="1" ry="2" fill="#0b0f0c"/><ellipse cx="29.2" cy="25.4" rx="1" ry="2" fill="#0b0f0c"/>
+<path d="M17 33q7 5 14 0" fill="none" stroke="#0b0f0c" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M19 33l1 3 1.5-2.5M29 33l-1 3-1.5-2.5" fill="#f2e6c2"/>
+</svg>
 <span>GRIBBLE, KEEPER OF GEMS</span>
+</div>
 <p id="speech" aria-live="polite">“We take turns. Click one or more gems from one pile, then End turn. Take the last gem to win.”</p>
 </div>
-<div class="turn-info">
+<div class="turn-info glass">
 <span class="eyebrow">YOUR MOVE</span>
 <p id="selection" aria-live="polite">Click the gems you want to take.</p>
 <span class="move-help">One pile per turn · Click again to deselect</span>
 </div>
-<div class="gem-count">◇ <b id="total">12</b> gems remain</div>
+<div class="gem-count"><span class="gem-icon" aria-hidden="true"></span><b id="total">12</b> gems remain</div>
 </div>
 <div class="side-panel right-panel">
 <div class="lantern-station">
@@ -44,14 +58,13 @@
 <svg class="lantern" viewBox="0 0 80 110" aria-hidden="true">
 <path d="M29 23V15a11 11 0 0 1 22 0v8" fill="none" stroke="#d6b16a" stroke-width="4"/>
 <path d="M22 28h36l7 13-5 48H20l-5-48z" fill="#283b30" stroke="#c19a55" stroke-width="3"/>
-<path d="M24 43h32l-3 37H27z" fill="#f6c760" opacity=".2"/>
+<path d="M24 43h32l-3 37H27z" fill="#f6c760" opacity=".25"/>
 <path class="flame" d="M40 76c-20-5-8-20-2-31-2 14 19 22 2 31" fill="#ffe6a0"/>
 <path d="M18 35h44M18 87h44M24 96h32" stroke="#e0b76a" stroke-width="4"/>
 </svg>
 <span>Ask the lantern for a hint</span>
 </button>
-<p id="hint-text" aria-live="polite">
-</p>
+<p id="hint-text" aria-live="polite"></p>
 </div>
 <div class="turn-actions">
 <button id="clear" disabled>Clear selection</button>
@@ -203,7 +216,7 @@
 </p>
 <p class="muted">The game works offline. The further-reading link needs an internet connection.</p>
 </dialog>
-<script src="game.bundle.js?v=20260922a">
+<script src="game.bundle.js?v=20260929a">
 </script>
 </body>
 </html>

@@ -5,26 +5,39 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Calculus Games · Little games, big ideas</title>
   <meta name="description" content="A playful local collection of calculus and pre-calculus games.">
+  <meta name="theme-color" content="#0a0b24">
   <link rel="icon" href="calculus-games-icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="hub.css">
 </head>
 <body>
+  <canvas id="curves" aria-hidden="true"></canvas>
+  <div class="vignette" aria-hidden="true"></div>
   <main id="menu">
-    <div class="menu-heading"><h1>Mini Calculus games</h1></div>
+    <header class="hub-head">
+      <div class="hub-logo" aria-hidden="true"><svg viewBox="0 0 64 64"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#6c63ff"/><stop offset="1" stop-color="#ff6fa5"/></linearGradient></defs><rect width="64" height="64" rx="16" fill="url(#lg)"/><path d="M13 49H54M17 54V11" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" opacity=".85"/><path d="M23 17Q35 54 51 16" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="17" cy="49" r="3" fill="#fff"/></svg></div>
+      <span class="hub-wordmark">Calculus<b>Games</b></span>
+    </header>
+    <div class="menu-heading">
+      <p class="hub-kicker"><span></span>Three little games · big ideas</p>
+      <h1>Mini Calculus <em>games</em></h1>
+      <p class="hub-sub">Match curves with their slopes, hunt a submarine with algebra, and climb a prize ladder with pure theory. Pick a game.</p>
+    </div>
     <section class="game-menu" aria-label="Choose a mini game">
-      <article class="game-card featured">
+      <article class="game-card featured" style="--accent:#ff6fa5;--accent2:#ffb3cf">
         <div class="art-panel"><img src="speed-dating.png" alt="Two cheerful graph characters on a café date"><span class="sticker">IT'S A MATCH!</span></div>
-        <div class="card-body"><h2>Function<br>speed-dating</h2><p>Five functions. Five derivatives.<br>Can you find their perfect matches?</p><a class="primary sub-menu-link" href="speed-dating.html" target="_blank" rel="noopener">Let's make a match <span>↗</span></a></div>
+        <div class="card-body"><span class="card-num">01</span><h2>Function<br>speed-dating</h2><p>Five functions. Five derivatives.<br>Can you find their perfect matches?</p><div class="tags"><span>Derivatives</span><span>Graphs</span></div><a class="primary sub-menu-link" href="speed-dating.html" target="_blank" rel="noopener">Let's make a match <span>↗</span></a></div>
       </article>
-      <article class="game-card">
+      <article class="game-card" style="--accent:#3ee6c4;--accent2:#9ff5e3">
         <div class="art-panel"><img src="mainsub.png" alt="Cartoon submarines in an underwater chase"></div>
-        <div class="card-body"><h2>Operation:<br>Deep Decode</h2><p>Find the position of the enemy submarine by solving clues.</p><a class="primary sub-menu-link" href="submarine.html" target="_blank" rel="noopener">Accept the mission ↗</a></div>
+        <div class="card-body"><span class="card-num">02</span><h2>Operation:<br>Deep Decode</h2><p>Find the position of the enemy submarine by solving clues.</p><div class="tags"><span>Limits</span><span>Algebra</span><span>Coordinates</span></div><a class="primary sub-menu-link" href="submarine.html" target="_blank" rel="noopener">Accept the mission <span>↗</span></a></div>
       </article>
-      <article class="game-card">
+      <article class="game-card" style="--accent:#f5cf6b;--accent2:#ffe9a8">
         <div class="quiz-visual" aria-hidden="true"><span class="quiz-rays"></span><span class="quiz-million">∫</span><span class="quiz-prize">€1,000,000</span></div>
-        <div class="card-body"><h2>The Calculus<br>Millionaire</h2><p>Climb the prize ladder by mastering the ideas behind calculus.</p><a class="primary sub-menu-link" href="calculus-millionaire.html" target="_blank" rel="noopener">Take the hot seat ↗</a></div>
+        <div class="card-body"><span class="card-num">03</span><h2>The Calculus<br>Millionaire</h2><p>Climb the prize ladder by mastering the ideas behind calculus.</p><div class="tags"><span>Theory</span><span>12 questions</span></div><a class="primary sub-menu-link" href="calculus-millionaire.html" target="_blank" rel="noopener">Take the hot seat <span>↗</span></a></div>
       </article>
     </section>
+    <footer class="hub-foot"><span>f′(x) = lim<sub>h→0</sub> [f(x+h) − f(x)] / h</span></footer>
   </main>
+  <script src="hub.js"></script>
 </body>
 </html>

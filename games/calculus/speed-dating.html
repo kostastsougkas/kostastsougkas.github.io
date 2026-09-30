@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>Function Speed-Dating · Calculus Games</title>
   <meta name="description" content="Match five function graphs with their derivatives.">
+  <meta name="theme-color" content="#fff1f6">
   <link rel="icon" href="calculus-games-icon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="style.css">
 </head>
 <body class="speed-date-page">
+  <div class="floaties" aria-hidden="true"><i>♥</i><i>♡</i><i>♥</i><i>♡</i><i>♥</i><i>♡</i><i>♥</i><i>♡</i></div>
   <main id="game">
     <div class="game-title">
-      <div><h1>Function speed-dating<span class="pink">♡</span></h1><p>Select a function card first, then select its derivative. Match all five couples.</p><div class="game-language"><label for="language">🌐 <span data-i18n="language">Language</span></label><select id="language" aria-label="Language / Språk"><option value="en">English</option><option value="sv">Svenska</option></select></div></div>
+      <div><a class="back-link" href="index.html">‹ Calculus Games</a><h1>Function speed-dating<span class="pink">♡</span></h1><p>Select a function card first, then select its derivative. Match all five couples.</p><div class="game-language"><label for="language">🌐 <span data-i18n="language">Language</span></label><select id="language" aria-label="Language / Språk / Γλώσσα"><option value="en">English</option><option value="sv">Svenska</option><option value="el">Ελληνικά</option></select><button type="button" id="sound" class="sound-toggle" aria-pressed="true" aria-label="Sound">🔊</button></div></div>
       <img class="title-art" src="speed-dating.png" alt="Two graph characters enjoying a speed date">
     </div>
     <span id="status" class="sr-only" role="status" aria-live="polite"></span>
     <section class="graph-section">
       <div class="section-heading">
         <h2><span class="section-dot">f(x)</span> The functions</h2>
-        <div class="round-rules"><span class="round-badge" id="round">ROUND 1 OF 3 · PRACTICE</span><strong id="mistake-budget"></strong></div>
+        <div class="round-rules"><span class="round-badge" id="round">ROUND 1 OF 3 · PRACTICE</span><strong id="mistake-budget"></strong><span class="match-progress" id="progress" aria-hidden="true"></span></div>
       </div>
       <div class="graph-grid" id="functions"></div>
     </section>
@@ -36,7 +38,7 @@
     <img src="matchmaking-mishap.png" alt="Cupid looks baffled as two mismatched graph characters sulk across a dating table"><h2 id="loss-title">Cupid needs a coffee break.</h2><p id="loss-copy"></p><p id="retry-copy"></p>
     <div class="dialog-actions"><button class="primary" id="retry" autofocus>Try again ↻</button></div>
   </dialog>
-  <script src="speed-dating-i18n.js"></script>
+  <script src="greek-i18n.js"></script><script src="speed-dating-i18n.js"></script>
   <script src="game.js"></script>
 </body>
 </html>
