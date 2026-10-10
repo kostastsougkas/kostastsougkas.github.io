@@ -44,7 +44,7 @@
     $('question-number').textContent=t('question',{n:level+1,total:bank.levels.length});$('current-prize').textContent=t('forPrize',{prize:euro(bank.prizes[level])});$('question').innerHTML=typeset(question.q,lang);
     $('prompt').textContent=selected===null?'':t('confirm',{letter:letters[selected]});$('final-answer').disabled=selected===null||locked;answers.innerHTML='';
     question.a.forEach((answer,i)=>{
-      const b=document.createElement('button');b.type='button';b.className='answer';b.dataset.letter=letters[i];b.dataset.index=i;b.innerHTML=typeset(answer,lang);b.onclick=()=>select(i);b.disabled=locked||removed.includes(i);
+      const b=document.createElement('button');b.type='button';b.className='answer';b.dataset.letter=letters[i];b.dataset.index=i;b.innerHTML=typeset(answer,lang,true);b.onclick=()=>select(i);b.disabled=locked||removed.includes(i);
       b.classList.toggle('selected',i===selected);b.setAttribute('aria-pressed',String(i===selected));b.classList.toggle('removed',removed.includes(i));
       if(locked&&!revealed)b.classList.toggle('locked',i===selected);
       if(revealed){b.classList.toggle('correct',i===question.correct);b.classList.toggle('wrong',i===selected&&i!==question.correct)}answers.appendChild(b);

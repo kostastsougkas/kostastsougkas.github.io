@@ -100,7 +100,7 @@ const bank={
         },
         {
           "id": "h62",
-          "q": "For x²+px+q=0, the pq formula is x=−p/2 ± √((p/2)²−q). Which expression is the discriminant?",
+          "q": "For x²+px+q=0, the pq formula is x=−p/2 ± √((p/2)²−q). Which expression’s sign decides how many real solutions there are?",
           "a": [
             "(p/2)²−q",
             "−p/2",
@@ -108,7 +108,7 @@ const bank={
             "(p/2)²+q"
           ],
           "correct": 0,
-          "why": "In the pq formula, the expression under the square root is the discriminant. Its sign determines the number of real solutions.",
+          "why": "The sign of the expression under the square root, (p/2)²−q, decides the number of real solutions: positive gives two, zero gives one and negative gives none. It equals one quarter of the usual discriminant p²−4q.",
           "topic": "quadratics"
         }
       ],
@@ -167,7 +167,7 @@ const bank={
         },
         {
           "id": "h81",
-          "q": "How many radians are in half a circle?",
+          "q": "How many radians are in half a turn (180°)?",
           "a": [
             "π",
             "2π",
@@ -175,7 +175,7 @@ const bank={
             "1"
           ],
           "correct": 0,
-          "why": "A complete circle corresponds to 2π radians, so half a circle corresponds to π radians.",
+          "why": "A full turn is 2π radians, so half a turn is π radians.",
           "topic": "radians"
         },
         {
@@ -193,7 +193,7 @@ const bank={
         },
         {
           "id": "h87",
-          "q": "In a right triangle, what does tan(θ)·cos(θ) represent?",
+          "q": "For an acute angle θ in a right triangle, what does tan(θ)·cos(θ) represent?",
           "a": [
             "Opposite side divided by adjacent side",
             "Adjacent side divided by hypotenuse",
@@ -221,7 +221,7 @@ const bank={
       [
         {
           "id": "h93",
-          "q": "For x²+px+q=0, the pq formula contains the discriminant (p/2)²−q. What happens when this expression equals zero?",
+          "q": "For x²+px+q=0, the pq formula contains the square root √((p/2)²−q). What happens when (p/2)²−q equals zero?",
           "a": [
             "The equation has one repeated real solution",
             "The equation has two different real solutions",
@@ -340,7 +340,7 @@ const bank={
         },
         {
           "id": "h13",
-          "q": "If distance is measured in metres and time in seconds, what units does its derivative have?",
+          "q": "If distance is measured in metres and time in seconds, what units does the derivative of distance with respect to time have?",
           "a": [
             "metres",
             "seconds",
@@ -405,7 +405,7 @@ const bank={
         },
         {
           "id": "h55",
-          "q": "If f is a rate measured in litres per minute, what units does ∫ₐᵇ f(t)dt have?",
+          "q": "If f is a rate measured in litres per minute and t is measured in minutes, what units does ∫ₐᵇ f(t)dt have?",
           "a": [
             "Litres per minute",
             "Minutes per litre",
@@ -524,7 +524,7 @@ const bank={
         },
         {
           "id": "h40",
-          "q": "Near a concave-up curve, where does a tangent line usually lie?",
+          "q": "Where does a tangent line to a differentiable concave-up function lie relative to the curve?",
           "a": [
             "Above the curve",
             "Below the curve",
@@ -532,7 +532,7 @@ const bank={
             "Always vertically through it"
           ],
           "correct": 1,
-          "why": "For a differentiable concave-up function, the graph bends above its tangent lines locally.",
+          "why": "A differentiable concave-up function lies on or above each of its tangent lines, so a tangent line lies below the curve and touches it at the point of tangency.",
           "topic": "tangent-geometry"
         }
       ],
@@ -552,7 +552,7 @@ const bank={
         },
         {
           "id": "h66",
-          "q": "A differentiable function has f′(x)>0 everywhere on an interval. Which conclusion is strongest?",
+          "q": "A differentiable function has f′(x)>0 everywhere on an interval. Which conclusion follows?",
           "a": [
             "It has no absolute maximum on any interval",
             "It is one-to-one on that interval",
@@ -736,7 +736,7 @@ const bank={
         },
         {
           "id": "h29",
-          "q": "A graph has a hole at x = a but approaches the same height from both sides. What can be true?",
+          "q": "A graph has a hole at x = a but approaches the same height from both sides. What must be true?",
           "a": [
             "The two-sided limit exists even though the function is not continuous",
             "The two-sided limit cannot exist",
@@ -1057,12 +1057,12 @@ const bank={
           "q": "Why do indefinite integrals include “+ C”?",
           "a": [
             "Every function is periodic",
-            "Different antiderivatives can differ by a constant",
+            "Any two antiderivatives differ by a constant",
             "The derivative of C is one",
             "C represents the upper bound"
           ],
           "correct": 1,
-          "why": "Differentiation removes constants, so an entire family of functions with different constant terms has the same derivative.",
+          "why": "On an interval, two functions with the same derivative differ by a constant, so writing + C describes every antiderivative at once. On separate pieces of a domain, such as x<0 and x>0 for 1/x, each piece may have its own constant.",
           "topic": "antiderivatives"
         }
       ],
@@ -1082,7 +1082,7 @@ const bank={
         },
         {
           "id": "h46",
-          "q": "Why does the Extreme Value Theorem require a closed, bounded interval?",
+          "q": "Why does the Extreme Value Theorem require a closed interval [a,b] rather than an open one?",
           "a": [
             "Including the endpoints prevents an extreme value from being approached only at an excluded edge",
             "A continuous function on an open interval is always constant",
@@ -1090,7 +1090,7 @@ const bank={
             "A bounded interval makes every derivative zero"
           ],
           "correct": 0,
-          "why": "Including the endpoints prevents a greatest or least value from being approached only at an excluded endpoint; boundedness also prevents the interval from extending indefinitely.",
+          "why": "On an open interval an extreme value can be approached at an excluded endpoint without ever being attained: f(x)=x on (0,1) has no largest or smallest value. Including the endpoints rules this out.",
           "topic": "extreme-value-theorem"
         },
         {
@@ -1147,15 +1147,15 @@ const bank={
         },
         {
           "id": "h72",
-          "q": "A continuous function on a closed interval has one candidate whose value is smaller than those at every other interior critical point and both endpoints. What is that candidate?",
+          "q": "For a continuous function on a closed interval, the values at all interior critical points and at both endpoints are compared. What is the smallest of these values?",
           "a": [
             "The absolute maximum",
             "The absolute minimum",
-            "Necessarily an inflection point",
-            "Not an extremum candidate"
+            "Necessarily an inflection value",
+            "Not an extreme value"
           ],
           "correct": 1,
-          "why": "For a continuous function on a closed interval, comparing every interior critical point and both endpoints identifies the absolute extrema.",
+          "why": "The absolute extrema of a continuous function on a closed interval occur at interior critical points or at endpoints, so the smallest of these candidate values is the absolute minimum.",
           "topic": "closed-interval-method"
         },
         {
@@ -1201,15 +1201,15 @@ const bank={
         },
         {
           "id": "h77",
-          "q": "Which example shows why f″(c)=0 does not settle the nature of a critical point?",
+          "q": "At x=0, the functions x³, x⁴ and −x⁴ all have f′(0)=0 and f″(0)=0. What does this show?",
           "a": [
-            "A stationary point may be an extremum or a stationary inflection",
-            "Every such point is undefined",
-            "The first derivative must be positive",
-            "The graph must be linear"
+            "A critical point with f″(c)=0 can be a minimum, a maximum or neither",
+            "Every such point is an inflection point",
+            "Every such point is a local minimum",
+            "The function must be linear near c"
           ],
           "correct": 0,
-          "why": "Different graph shapes can share zero first and second derivatives at a point, so sign information or another test is needed.",
+          "why": "At 0, x⁴ has a minimum, −x⁴ a maximum and x³ neither, yet all three have f′(0)=f″(0)=0. So f″(c)=0 gives no conclusion; examine the sign of f′ around c instead.",
           "topic": "second-derivative-test"
         },
         {
@@ -1218,7 +1218,7 @@ const bank={
           "a": [
             "An asymptote describes end behavior, not a barrier",
             "Horizontal asymptotes are calculation errors",
-            "Only vertical asymptotes cannot be crossed",
+            "It can only be crossed at x=0",
             "The derivative must be zero there"
           ],
           "correct": 0,
@@ -1242,7 +1242,7 @@ const bank={
           "id": "h86",
           "q": "If y=L is a horizontal asymptote, what does that tell us about f?",
           "a": [
-            "f(x) approaches L in an end direction",
+            "f(x) approaches L as x→∞ or as x→−∞",
             "f(x) never equals L",
             "L is the absolute maximum",
             "f′(x)=0 everywhere"
@@ -1438,7 +1438,7 @@ const bank={
         },
         {
           "id": "u11",
-          "q": "If F′=f, how does the Fundamental Theorem evaluate ∫ₐᵇ f(x)dx?",
+          "q": "If f is continuous on [a,b] and F′=f, how does the Fundamental Theorem evaluate ∫ₐᵇ f(x)dx?",
           "a": [
             "F(b)−F(a)",
             "F(a)+F(b)",
@@ -1518,7 +1518,7 @@ const bank={
         },
         {
           "id": "u06",
-          "q": "If f has an inverse and f′(a)≠0, what determines the derivative of the inverse at f(a)?",
+          "q": "Suppose f is differentiable and one-to-one on an interval, and f′(a)≠0. What is the derivative of the inverse at f(a)?",
           "a": [
             "The reciprocal 1/f′(a)",
             "The value f′(a) itself",
@@ -1531,15 +1531,15 @@ const bank={
         },
         {
           "id": "u70",
-          "q": "Suppose f is one-to-one on an interval containing a and f′(a)=0. What may happen to the inverse graph at the corresponding point?",
+          "q": "Suppose f is differentiable and one-to-one on an interval containing a, and f′(a)=0. What happens to the inverse at the corresponding point f(a)?",
           "a": [
-            "It may have a vertical tangent or fail to be differentiable",
+            "It has a vertical tangent, so it is not differentiable there",
             "Its tangent must also be horizontal",
             "It becomes constant everywhere",
             "It must cross the x-axis"
           ],
           "correct": 0,
-          "why": "Reflecting a horizontal tangent across y=x can give a vertical tangent on the inverse graph. The usual reciprocal derivative formula does not give a finite derivative when f′(a)=0.",
+          "why": "If the inverse g had a derivative at f(a), differentiating g(f(x))=x would give g′(f(a))·f′(a)=1, which is impossible when f′(a)=0. Geometrically, the horizontal tangent of f reflects in y=x to a vertical tangent of g.",
           "topic": "inverse-derivatives"
         }
       ],
@@ -1799,7 +1799,7 @@ const bank={
         },
         {
           "id": "u32",
-          "q": "For which p does the integral from 1 to ∞ of 1/xᵖ converge?",
+          "q": "For which p does ∫₁^(∞) 1/xᵖ dx converge?",
           "a": [
             "p>1",
             "p≥0",
@@ -1851,15 +1851,15 @@ const bank={
         },
         {
           "id": "u36",
-          "q": "Can an improper integral converge even when its integrand does not approach zero monotonically?",
+          "q": "Must f(x)→0 as x→∞ for ∫₁^(∞) f(x)dx to converge?",
           "a": [
-            "Yes; monotonicity is not required in general",
-            "No; monotonicity is mandatory",
-            "Only on finite intervals",
-            "Only for positive integrands"
+            "No; oscillation can still make the integral converge",
+            "Yes, for every continuous f",
+            "Yes, otherwise the area would be infinite",
+            "Yes, and f must also be decreasing"
           ],
           "correct": 0,
-          "why": "Oscillation and cancellation can produce convergence without monotone decay, though the exact conditions must be checked.",
+          "why": "No. For example ∫₁^(∞) sin(x²)dx converges (substitute u=x²), even though sin(x²) keeps oscillating between −1 and 1. This differs from series, whose terms must tend to zero.",
           "topic": "conditional-convergence"
         }
       ],
@@ -2028,7 +2028,7 @@ const bank={
           "id": "u55",
           "q": "What makes an ordinary differential equation separable?",
           "a": [
-            "It can be rearranged with each variable and its differential on one side",
+            "It can be rearranged so that each variable, with its differential, is on its own side",
             "It has constant coefficients",
             "It is always second order",
             "Its solution is a polynomial"
@@ -2132,12 +2132,12 @@ const bank={
         },
         {
           "id": "u63",
-          "q": "How is the average value of a continuous function f on [a,b], with a<b, found?",
+          "q": "Which expression gives the average value of a continuous function f on [a,b], with a<b?",
           "a": [
-            "Divide ∫ₐᵇ f(x)dx by b−a",
-            "Use (f(a)+f(b))/2 in every case",
-            "Divide f(b)−f(a) by b−a",
-            "Evaluate f only at the midpoint in every case"
+            "(1/(b−a))∫ₐᵇ f(x)dx",
+            "(f(a)+f(b))/2",
+            "(f(b)−f(a))/(b−a)",
+            "f((a+b)/2)"
           ],
           "correct": 0,
           "why": "The average value is accumulated function value divided by interval length: (1/(b−a))∫ₐᵇ f(x)dx. This differs from average rate of change.",
@@ -2145,7 +2145,7 @@ const bank={
         },
         {
           "id": "u64",
-          "q": "For a continuous, concave-up function, how does the trapezoidal rule compare with the exact integral?",
+          "q": "If f″(x)>0 on [a,b], how does the trapezoidal rule compare with the exact integral?",
           "a": [
             "It overestimates the integral",
             "It underestimates the integral",
@@ -2153,7 +2153,7 @@ const bank={
             "The sign of f alone determines the error"
           ],
           "correct": 0,
-          "why": "For a concave-up graph, each secant segment lies on or above the graph. The trapezoids therefore give an estimate at least as large as the integral.",
+          "why": "When f″>0 the graph is strictly concave up, so the straight top of each trapezoid lies above the graph between the nodes. The trapezoidal estimate is therefore larger than the integral.",
           "topic": "trapezoidal-rule"
         },
         {

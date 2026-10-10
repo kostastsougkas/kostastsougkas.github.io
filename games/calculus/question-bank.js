@@ -16,7 +16,7 @@
     const matches=translated.filter(q=>(q.id+' '+q.q+' '+q.a.join(' ')+' '+q.why+' '+q.topic).toLowerCase().includes(term));if(!matches.length)return;
     const group=document.createElement('section');group.className='level-group';group.innerHTML='<h3>'+t.prize+' '+(level+1)+' · '+matches.length+' '+t.questions.toUpperCase()+'</h3><div class="question-list"></div>';const list=group.querySelector('.question-list');
     matches.forEach(q=>{
-     const card=document.createElement('article');card.className='question-item';card.innerHTML='<span class="topic">'+q.id+'</span><h4>'+typeset(q.q,lang)+'</h4><ol type="A">'+q.a.map((a,i)=>'<li'+(i===q.correct?' class="answer-line"':'')+'>'+typeset(a,lang)+(i===q.correct?' <strong>✓ '+t.correct+'</strong>':'')+'</li>').join('')+'</ol><p class="explanation"><strong>'+t.why+'</strong> '+typeset(q.why,lang)+'</p>';list.appendChild(card);visible++;
+     const card=document.createElement('article');card.className='question-item';card.innerHTML='<span class="topic">'+q.id+'</span><h4>'+typeset(q.q,lang)+'</h4><ol type="A">'+q.a.map((a,i)=>'<li'+(i===q.correct?' class="answer-line"':'')+'>'+typeset(a,lang,true)+(i===q.correct?' <strong>✓ '+t.correct+'</strong>':'')+'</li>').join('')+'</ol><p class="explanation"><strong>'+t.why+'</strong> '+typeset(q.why,lang)+'</p>';list.appendChild(card);visible++;
     });section.appendChild(group);
    });if(section.querySelector('.question-item'))container.appendChild(section);
   });if(!visible)container.innerHTML='<p class="empty">'+t.empty+'</p>';

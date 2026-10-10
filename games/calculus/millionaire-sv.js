@@ -282,7 +282,7 @@ const translations={
     "why": "Kontinuitet vid a kräver att funktionsvärdet och gränsvärdet finns och att de är lika."
   },
   "h29": {
-    "q": "En graf har ett hål vid x = a men närmar sig samma höjd från båda sidor. Vad kan gälla?",
+    "q": "En graf har ett hål vid x = a men närmar sig samma höjd från båda sidor. Vad måste gälla?",
     "a": [
       "Det tvåsidiga gränsvärdet finns trots att funktionen inte är kontinuerlig",
       "Det tvåsidiga gränsvärdet kan inte finnas",
@@ -392,14 +392,14 @@ const translations={
     "why": "Andraderivatan noll ger bara en kandidat. En inflexionspunkt kräver ett verkligt byte av konkavitet."
   },
   "h40": {
-    "q": "Var ligger en tangent vanligtvis i förhållande till en kurva som är konkav uppåt?",
+    "q": "Var ligger en tangent till en deriverbar funktion som är konkav uppåt, i förhållande till kurvan?",
     "a": [
       "Ovanför kurvan",
       "Under kurvan",
       "Alltid på x-axeln",
       "Alltid vertikalt genom kurvan"
     ],
-    "why": "För en deriverbar funktion som är konkav uppåt ligger grafen lokalt ovanför sina tangentlinjer."
+    "why": "En deriverbar funktion som är konkav uppåt ligger på eller ovanför var och en av sina tangenter. Tangenten ligger alltså under kurvan och rör vid den i tangeringspunkten."
   },
   "h41": {
     "q": "Vad garanteras för en kontinuerlig funktion på ett slutet intervall [a,b]?",
@@ -452,14 +452,14 @@ const translations={
     "why": "Logaritmlagar gör om produkter till summor och exponenter till faktorer, vilket ofta förenklar deriveringen."
   },
   "h46": {
-    "q": "Varför kräver satsen om största och minsta värde ett slutet, begränsat intervall?",
+    "q": "Varför kräver satsen om största och minsta värde ett slutet intervall [a,b] i stället för ett öppet?",
     "a": [
       "När ändpunkterna ingår kan extremvärden inte enbart närmas vid en utesluten intervallkant",
       "En kontinuerlig funktion på ett öppet intervall är alltid konstant",
       "Varje ändpunkt måste vara en kritisk punkt",
       "Ett begränsat intervall gör varje derivata noll"
     ],
-    "why": "Att ändpunkterna ingår förhindrar att ett extremvärde bara närmas vid en utesluten ändpunkt. Begränsningen förhindrar också att intervallet sträcker sig oändligt långt."
+    "why": "På ett öppet intervall kan ett extremvärde närmas vid en utesluten ändpunkt utan att någonsin antas: f(x)=x på ]0,1[ har varken något största eller minsta värde. När ändpunkterna ingår kan det inte hända."
   },
   "h47": {
     "q": "Två icke-vertikala linjer är parallella. Vad måste gälla i deras ekvationer y = kx + m?",
@@ -572,14 +572,14 @@ const translations={
     "why": "När x=0 blir y=m. Därför anger m höjden där linjen skär y-axeln."
   },
   "h58": {
-    "q": "Vilket samband gäller mellan lutningarna för två icke-vertikala, vinkelräta linjer?",
+    "q": "Vilket samband gäller mellan riktningskoefficienterna för två icke-vertikala, vinkelräta linjer?",
     "a": [
       "Deras produkt är −1",
-      "Lutningarna är lika",
+      "Riktningskoefficienterna är lika",
       "Deras summa är alltid noll",
-      "Båda lutningarna måste vara positiva"
+      "Båda riktningskoefficienterna måste vara positiva"
     ],
-    "why": "Vinkelräta icke-vertikala linjer har lutningar som är varandras negativa inverser. Produkten blir därför −1."
+    "why": "Vinkelräta icke-vertikala linjer har riktningskoefficienter som är varandras negativa inverser. Produkten blir därför −1."
   },
   "h59": {
     "q": "En primitiv funktion till f är en funktion F som uppfyller …",
@@ -605,11 +605,11 @@ const translations={
     "q": "Varför innehåller obestämda integraler ”+ C”?",
     "a": [
       "Varje funktion är periodisk",
-      "Olika primitiva funktioner kan skilja sig åt med en konstant",
+      "Två primitiva funktioner skiljer sig alltid åt med en konstant",
       "Derivatan av C är ett",
       "C står för den övre integrationsgränsen"
     ],
-    "why": "Konstanter försvinner vid derivering. En hel familj av funktioner med olika konstanttermer har därför samma derivata."
+    "why": "På ett intervall skiljer sig två funktioner med samma derivata åt med en konstant. Skrivsättet + C beskriver därför alla primitiva funktioner på en gång. Om definitionsmängden består av flera delar, som x<0 och x>0 för 1/x, kan varje del ha en egen konstant."
   },
   "h62": {
     "q": "För x²+px+q=0 är pq-formeln x=−p/2 ± √((p/2)²−q). Vilket uttryck är diskriminanten i pq-formeln?",
@@ -652,7 +652,7 @@ const translations={
     "why": "På ett slutet intervall kan det största eller minsta värdet finnas antingen i en kritisk punkt eller i en ändpunkt."
   },
   "h66": {
-    "q": "En deriverbar funktion har f′(x)>0 överallt i ett intervall. Vilken slutsats är starkast?",
+    "q": "En deriverbar funktion har f′(x)>0 överallt i ett intervall. Vilken slutsats följer?",
     "a": [
       "Den har inget globalt maximum på något intervall",
       "Den antar varje funktionsvärde högst en gång i intervallet",
@@ -712,14 +712,14 @@ const translations={
     "why": "Modellen ska bara tillåta värden som är meningsfulla i situationen, till exempel positiva mått och tillgänglig mängd material."
   },
   "h72": {
-    "q": "En kontinuerlig funktion på ett slutet intervall har en kandidat vars värde är mindre än värdena i alla andra inre kritiska punkter och i båda ändpunkterna. Vad ger kandidaten?",
+    "q": "För en kontinuerlig funktion på ett slutet intervall jämförs värdena i alla inre kritiska punkter och i båda ändpunkterna. Vad är det minsta av dessa värden?",
     "a": [
       "Det globala maximumet",
       "Det globala minimumet",
-      "Nödvändigtvis en inflexionspunkt",
-      "Ingen möjlig extrempunkt"
+      "Nödvändigtvis ett värde i en inflexionspunkt",
+      "Inget extremvärde"
     ],
-    "why": "För en kontinuerlig funktion på ett slutet intervall hittar man globala extremvärden genom att jämföra värdena i alla inre kritiska punkter och ändpunkterna."
+    "why": "En kontinuerlig funktion på ett slutet intervall antar sina globala extremvärden i inre kritiska punkter eller i ändpunkter. Det minsta av kandidatvärdena är därför det globala minimumet."
   },
   "h73": {
     "q": "En funktion har f′(c) = 0 och f″(c) < 0. Vad visar andraderivatatestet?",
@@ -762,14 +762,14 @@ const translations={
     "why": "När grafen böjer uppåt vid en horisontell tangent stöder det slutsatsen att punkten är en lokal minimipunkt."
   },
   "h77": {
-    "q": "Vilket exempel visar varför f″(c)=0 inte avgör typen av kritisk punkt?",
+    "q": "Vid x=0 har funktionerna x³, x⁴ och −x⁴ alla f′(0)=0 och f″(0)=0. Vad visar detta?",
     "a": [
-      "En stationär punkt kan vara en extrempunkt eller en terrasspunkt",
-      "Varje sådan punkt är odefinierad",
-      "Förstaderivatan måste vara positiv",
-      "Grafen måste vara en rät linje"
+      "En stationär punkt med f″(c)=0 kan vara en minimipunkt, en maximipunkt eller ingetdera",
+      "Varje sådan punkt är en inflexionspunkt",
+      "Varje sådan punkt är en lokal minimipunkt",
+      "Funktionen måste vara linjär nära c"
     ],
-    "why": "Olika grafers former kan ha både första- och andraderivatan noll i en punkt. Därför behövs teckeninformation eller ett annat test."
+    "why": "Vid 0 har x⁴ en minimipunkt, −x⁴ en maximipunkt och x³ en terrasspunkt, men alla tre har f′(0)=f″(0)=0. Andraderivatan ger alltså inget besked; undersök i stället tecknet på f′ runt c."
   },
   "h78": {
     "q": "Hur beskrivs f om f′ är positiv och avtagande?",
@@ -816,7 +816,7 @@ const translations={
     "a": [
       "En asymptot beskriver beteendet långt bort, inte en barriär",
       "Horisontella asymptoter är räknefel",
-      "Bara vertikala asymptoter kan inte korsas",
+      "Den kan bara korsas vid x=0",
       "Derivatan måste vara noll där"
     ],
     "why": "En horisontell asymptot beskriver vad som händer när x går mot oändligheten åt något håll. Den hindrar inte korsningar vid ändliga x-värden."
@@ -1012,7 +1012,7 @@ const translations={
     "why": "Deriverbarhet medför kontinuitet men garanterar varken extremvärden eller högre derivator."
   },
   "u06": {
-    "q": "Om f har en invers och f′(a)≠0, vad ger inversens derivata vid f(a)?",
+    "q": "Anta att f är deriverbar och injektiv på ett intervall och att f′(a)≠0. Vad är inversens derivata vid f(a)?",
     "a": [
       "Det inverterade värdet 1/f′(a)",
       "Värdet f′(a) självt",
@@ -1062,7 +1062,7 @@ const translations={
     "why": "Kontinuitet krävs på det slutna intervallet. Deriverbarhet krävs i intervallets inre så att tangentlutningarna finns där."
   },
   "u11": {
-    "q": "Om F′=f, hur beräknar analysens huvudsats ∫ₐᵇ f(x)dx?",
+    "q": "Om f är kontinuerlig på [a,b] och F′=f, hur beräknar analysens huvudsats ∫ₐᵇ f(x)dx?",
     "a": [
       "F(b)−F(a)",
       "F(a)+F(b)",
@@ -1272,7 +1272,7 @@ const translations={
     "why": "Generaliserade integraler definieras med gränsvärden när intervallet är oändligt eller integranden blir obegränsad."
   },
   "u32": {
-    "q": "För vilka p konvergerar integralen från 1 till ∞ av 1/xᵖ?",
+    "q": "För vilka p konvergerar ∫₁^(∞) 1/xᵖ dx?",
     "a": [
       "p>1",
       "p≥0",
@@ -1312,14 +1312,14 @@ const translations={
     "why": "Om integralen av absolutbeloppet konvergerar, konvergerar även integralen med de ursprungliga tecknen."
   },
   "u36": {
-    "q": "Kan en generaliserad integral konvergera även om integranden inte går monotont mot noll?",
+    "q": "Måste f(x)→0 när x→∞ för att ∫₁^(∞) f(x)dx ska konvergera?",
     "a": [
-      "Ja; monotonicitet krävs inte i allmänhet",
-      "Nej; monotonicitet krävs alltid",
-      "Bara på ändliga intervall",
-      "Bara för positiva integrander"
+      "Nej; oscillation kan ändå göra att integralen konvergerar",
+      "Ja, för varje kontinuerlig f",
+      "Ja, annars blir arean oändlig",
+      "Ja, och f måste dessutom vara avtagande"
     ],
-    "why": "Oscillation och utjämning mellan positiva och negativa bidrag kan ge konvergens utan monoton avtagning. Villkoren måste kontrolleras i varje fall."
+    "why": "Nej. Till exempel konvergerar ∫₁^(∞) sin(x²)dx (sätt u=x²), trots att sin(x²) hela tiden pendlar mellan −1 och 1. Det skiljer sig från serier, där termerna måste gå mot noll."
   },
   "u37": {
     "q": "Vilket nödvändigt villkor måste vara uppfyllt för att en talserie ska konvergera?",
@@ -1582,24 +1582,24 @@ const translations={
     "why": "Volymens förändringshastighet är nettoflödet rᵢₙ−rₒᵤₜ. Integralen av nettoflödet ger volymförändringen, som kan vara positiv eller negativ."
   },
   "u63": {
-    "q": "Hur beräknas medelvärdet av en kontinuerlig funktion f på [a,b], där a<b?",
+    "q": "Vilket uttryck ger medelvärdet av en kontinuerlig funktion f på [a,b], där a<b?",
     "a": [
-      "Dela ∫ₐᵇ f(x)dx med b−a",
-      "Använd (f(a)+f(b))/2 i alla fall",
-      "Dela f(b)−f(a) med b−a",
-      "Beräkna enbart funktionens värde i mittpunkten i alla fall"
+      "(1/(b−a))∫ₐᵇ f(x)dx",
+      "(f(a)+f(b))/2",
+      "(f(b)−f(a))/(b−a)",
+      "f((a+b)/2)"
     ],
     "why": "Funktionens medelvärde är integralen delad med intervallets längd: (1/(b−a))∫ₐᵇ f(x)dx. Det är något annat än genomsnittlig förändringshastighet."
   },
   "u64": {
-    "q": "Hur förhåller sig trapetsregelns uppskattning till den exakta integralen för en kontinuerlig funktion som är konkav uppåt?",
+    "q": "Om f″(x)>0 på [a,b], hur förhåller sig trapetsregelns uppskattning till den exakta integralen?",
     "a": [
       "Den överskattar integralen",
       "Den underskattar integralen",
       "Den är exakt för varje sådan funktion",
       "Enbart tecknet på f avgör felet"
     ],
-    "why": "För en graf som är konkav uppåt ligger varje sekantsegment på eller ovanför grafen. Trapetserna ger därför ett värde som är minst lika stort som integralen."
+    "why": "När f″>0 är grafen strikt konkav uppåt. Varje trapets övre sida ligger då ovanför grafen mellan delningspunkterna, så trapetsregeln ger ett större värde än integralen."
   },
   "u65": {
     "q": "Vad använder ett steg i Eulers metod för y′=f(t,y)?",
@@ -1652,14 +1652,14 @@ const translations={
     "why": "Två skärningar med samma horisontella linje innebär att två x-värden har samma funktionsvärde. Då skulle inversen inte vara en funktion."
   },
   "u70": {
-    "q": "Anta att f är injektiv på ett intervall som innehåller a och att f′(a)=0. Vad kan hända med inversens graf i motsvarande punkt?",
+    "q": "Anta att f är deriverbar och injektiv på ett intervall som innehåller a och att f′(a)=0. Vad händer med inversen i motsvarande punkt f(a)?",
     "a": [
-      "Den kan ha en vertikal tangent eller sakna derivata",
+      "Den har en vertikal tangent och är alltså inte deriverbar där",
       "Dess tangent måste också vara horisontell",
       "Den blir konstant överallt",
       "Den måste skära x-axeln"
     ],
-    "why": "Spegling av en horisontell tangent i linjen y=x kan ge en vertikal tangent till inversens graf. Den vanliga formeln 1/f′(a) ger ingen ändlig derivata när f′(a)=0."
+    "why": "Om inversen g vore deriverbar i f(a) skulle derivering av g(f(x))=x ge g′(f(a))·f′(a)=1, vilket är omöjligt när f′(a)=0. Geometriskt speglas f:s horisontella tangent i linjen y=x till en vertikal tangent för g."
   },
   "u71": {
     "q": "Vilken egenskap hos en tillräckligt många gånger deriverbar funktion styr i stor utsträckning trapetsregelns fel?",
